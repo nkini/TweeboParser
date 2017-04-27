@@ -27,7 +27,7 @@ import codecs
 
 def print_line_withmodification(cline, tag):
     s = ""
-    for i in xrange(0,13):
+    for i in range(0,13):
         s += (cline[i] + "\t")
     s += tag
     print(s)
@@ -121,7 +121,7 @@ def main(testfile, featsfile):
         #print
     #sys.stderr.write(str(acc/tot) + "\n")
 if __name__ == "__main__":
-    sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
-    sys.stderr = codecs.getwriter('utf-8')(sys.stderr)
+    #sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+    #sys.stderr = codecs.getwriter('utf-8')(sys.stderr)
     main(sys.argv[1], sys.argv[2])
 

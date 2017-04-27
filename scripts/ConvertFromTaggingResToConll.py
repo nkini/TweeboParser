@@ -66,15 +66,19 @@ def convert_sentence(sen):
         ind += 1
     return new_sen 
 
+
 if __name__ == '__main__':
-    sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+    #sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
     #sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='UTF-8', line_buffering=True)   #Ref: https://wiki.python.org/moin/PortingToPy3k/BilingualQuickRef#codecs
     corpus = read_corpus(A.inputf)
+    with open('testlog','w') as f:
+        f.write(str(corpus))
 
     conll_format_corpus = []
     for sen in corpus:
         conll_format_corpus.append(convert_sentence(sen))
 
     for sen in conll_format_corpus:
+        #print(sen)
         print_sentence(sen, sys.stdout)
 
